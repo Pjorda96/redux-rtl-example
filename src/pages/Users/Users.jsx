@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Users() {
+  const { t } = useTranslation();
+
   return (
-    <h2>Users</h2>
+    <h2>{t('users.title')}</h2>
   );
 }

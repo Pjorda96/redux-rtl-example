@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import '../services/internationalization/i18n';
 
 import Spinner from "../components/Spinner";
 const Navbar = lazy(() => import('../components/Navbar'));
@@ -21,7 +22,7 @@ export default function App() {
         </Suspense>
 
         <Switch>
-          <Route path="/about">
+          <Route path="/about/:word?">
             <Suspense fallback={<Spinner />}>
               <About />
             </Suspense>

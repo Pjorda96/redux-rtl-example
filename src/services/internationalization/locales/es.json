@@ -1,0 +1,17 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "users": "Users"
+  },
+  "home": {
+    "title": "Home"
+  },
+  "about":{
+    "title": "About",
+    "result": "Result: {{result}}"
+  },
+  "users": {
+    "title": "Users"
+  }
+}

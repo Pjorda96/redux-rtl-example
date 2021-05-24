@@ -1,7 +1,10 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
+
   return (
-    <h2>Home</h2>
+    <h2>{t('home.title')}</h2>
   );
 }
