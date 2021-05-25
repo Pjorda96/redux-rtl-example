@@ -1,8 +1,37 @@
-import { render, screen } from '@testing-library/react';
+import { render, cleanup } from '../testUtils';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+let instance;
+const defaultState = {
+  basic: { value: '', inProgress: false, error: '' },
+  info: { users: [], inProgress: false, error: '' },
+};
+
+function reducer(state = defaultState, action) {
+  return { ...state };
+}
+
+beforeEach(() => {
+  instance = render(<App />, reducer);
+})
+afterEach(() => {
+  instance = null;
+  cleanup();
+})
+
+test('renders App', () => {
+  expect(instance).not.toBeUndefined();
 });
+
+/*test('renders App in about', () => {
+  const about = render(
+    render(<App />),
+    reducer,
+    {
+      initialState: defaultState,
+      router: '/about'
+    }
+  );
+
+  expect(about).not.toBeUndefined();
+});*/
