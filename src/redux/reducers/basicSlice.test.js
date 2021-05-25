@@ -69,14 +69,16 @@ describe('Change value', () => {
   })
 })
 
-/*test('Adds a new book', () => {
-  let state = store.getState().book;
-  const initialBookCount = state.bookList.length;
+describe('Set value async', () => {
+  const getValue = () => getState().value;
 
-  store.dispatch(addNewBook({ id: '4', author: 'Tester', title: 'Testers manual' }));
-  state = store.getState().book;
-  const newlyAddedBook = state.bookList.find((book) => book.id === '4');
-  expect(newlyAddedBook?.author).toBe('Tester');
-  expect(newlyAddedBook?.title).toBe('Testers manual');
-  expect(state.bookList.length).toBeGreaterThan(initialBookCount);
-})*/
+  test('Default value', () => {
+    const value = 'value';
+    store.dispatch(setValueAsync(value));
+
+    expect(getValue()).toBe(value);
+  })
+
+  // TODO: spy toggleInProgress
+  // TODO: spy try/catch
+})
