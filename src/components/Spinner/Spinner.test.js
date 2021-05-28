@@ -1,16 +1,15 @@
 import { render, cleanup } from '@testing-library/react';
 import Spinner from './Spinner';
 
-let instance;
+const renderSpinner = () => render(<Spinner />);
 
 beforeEach(() => {
-  instance = render(<Spinner />);
+  render(<Spinner />);
 })
 afterEach(() => {
-  instance = null;
   cleanup();
 })
 
 test('renders Spinner', () => {
-  expect(instance).not.toBeUndefined();
+  expect(renderSpinner()).not.toBeUndefined();
 });
