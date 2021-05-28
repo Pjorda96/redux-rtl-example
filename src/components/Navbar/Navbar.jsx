@@ -22,9 +22,9 @@ export default function Navbar() {
         </li>
       </ul>
 
-      <p>This page: {value}</p>
-      <p>Error: {error || 'all OK'}</p>
-      { inProgress && <p>In progress</p> }
+      <p data-testid="this-page">This page: {value}</p>
+      <p data-testid="error">Error: {error || 'all OK'}</p>
+      { inProgress && <p data-testid="inProgress">In progress</p> }
     </nav>
   );
 }
