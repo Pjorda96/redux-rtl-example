@@ -8,12 +8,20 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Spinner from './components/Spinner';
 
+export const initialState = {
+  basic: { value: '', inProgress: false, error: '' },
+  info: { users: [], inProgress: false, error: '' },
+};
+
+function reducer(state = initialState, action) {
+  return { ...state };
+}
+
 export function render(
   component,
-  reducer,
   {
-    initialState,
-    store = createStore(reducer, initialState),
+    initialState: defaultState,
+    store = createStore(reducer, defaultState),
     route = '/',
     history = createMemoryHistory({initialEntries: [route]}),
     ...renderOptions

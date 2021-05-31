@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <h2>{t('home.title')}</h2>
 
-      <button id="home" onClick={handleClick}>{t('home.trigger')}</button>
+      <button onClick={handleClick}>{t('home.trigger')}</button>
     </>
   );
 }

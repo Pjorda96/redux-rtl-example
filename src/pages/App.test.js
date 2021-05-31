@@ -1,15 +1,6 @@
-import { render, cleanup } from '../testUtils';
+import { render, cleanup, initialState } from '../testUtils';
 import App from './App';
 import store from '../redux/store';
-
-const initialState = {
-  basic: { value: '', inProgress: false, error: '' },
-  info: { users: [], inProgress: false, error: '' },
-};
-
-function reducer(state = initialState, action) {
-  return { ...state };
-}
 
 const renderApp = ({
   defaultState = initialState,
@@ -18,7 +9,6 @@ const renderApp = ({
   history,
 }) => render(
   <App />,
-  reducer,
   { initialState: defaultState, store, route, history },
 )
 

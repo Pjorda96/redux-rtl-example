@@ -1,4 +1,4 @@
-import { render, cleanup, screen } from '../../testUtils';
+import { render, cleanup, screen, initialState } from '../../testUtils';
 import Navbar from './Navbar';
 
 jest.mock('react-i18next', () => ({
@@ -12,15 +12,6 @@ jest.mock('react-i18next', () => ({
   },
 }));
 
-const initialState = {
-  basic: { value: '', inProgress: false, error: '' },
-  info: { users: [], inProgress: false, error: '' },
-};
-
-function reducer(state = initialState, action) {
-  return { ...state };
-}
-
 const renderNav = ({
   defaultState = initialState,
   store,
@@ -28,7 +19,6 @@ const renderNav = ({
   history,
 }) => render(
   <Navbar />,
-  reducer,
   { initialState: defaultState, store, route, history },
 )
 

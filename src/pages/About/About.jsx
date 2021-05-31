@@ -23,8 +23,8 @@ export default function About() {
     <>
       <h2>{t('about.title')}</h2>
 
-      <p>{t('about.result', { result: state })}</p>
-      <p>Value: {value}</p>
+      <p data-testid="result">{t('about.result', { result: state })}</p>
+      <p data-testid="value">Value: {value}</p>
     </>
   );
 }
